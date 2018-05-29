@@ -1,7 +1,15 @@
 #  -*-coding:utf-8-*-
+"""
+    Python ver.
+    solution for algorithm problem.
+    [S/W problem solving basic] Ladder1
+    https://www.swexpertacademy.com/main/learn/course/lectureProblemViewer.do
+    You can see the question and download input, output text file from above link.
 
+    * Download input.txt from the link
+    * Please, change the value of INPUT_FILE_PATH
+"""
 import numpy as np
-import math
 import copy
 
 INPUT_FILE_PATH = "./ladder_input.txt"
@@ -38,30 +46,30 @@ class Ladder(object):
         else:
             return True
 
-
-    # 알맞은 다음 길을 찾아 이동
+    # find the right way to go 
     def tracePath(self, _row, _col, _map):
         row = int(_row)
         col = int(_col)
         ladder_map = _map
 
-        # 오른쪽이나 왼쪽에 길이 있을 경우 그쪽으로 이동
-        while row < MAX_LENGTH:  # 맨 마지막 줄에 도달할 때까지 이동
+        # move and check the right, left path until the last line
+        while row < MAX_LENGTH:  
             if ladder_map[row][col] == 2:
-                # print('row : {0} and col : {1}'.format(row, col))
                 return True
 
             ladder_map[row][col] = 5
-            if self.isAvailPath(row, col + 1, ladder_map):  # 오른쪽 체크
+            # check right direction
+            if self.isAvailPath(row, col + 1, ladder_map):
                 col += 1
-            elif self.isAvailPath(row, col - 1, ladder_map):  # 왼쪽 체크
+            # check left direction
+            elif self.isAvailPath(row, col - 1, ladder_map):
                 col -= 1
-            else:  # 왼쪽 오른쪽이 모두 길이 없으면 아래로 이동
+            # if you have no left, right direction, go down.
+            else:
                 row += 1
-                   # row가 99일 때, 즉, 맨 마지막 줄에 도달했을 때
+        # when row is 99, the last line is reached
+        # if ladder_map[row][col] is not 2, return False
         return False
-
-        
 
     def findWinner(self):
         num = 0
@@ -74,9 +82,10 @@ class Ladder(object):
                 ladder_map = copy.deepcopy(self.map)
                 result = self.tracePath(0, num, ladder_map)
                 if result:
-                    # print('num : {0}'.format(num))
-                    return num  # 2에 도착한 num의 수
+                    # The num is reached at 2
+                    return num
                 num += 1
+
 
 def case_generator(fp, CASE_CNT):
     for i in range(0, CASE_CNT):
@@ -89,13 +98,9 @@ def case_generator(fp, CASE_CNT):
         lines = np.array(lines)
         yield cnt_number, lines
 
-
 if __name__ == "__main__":
     np.set_printoptions(threshold=np.inf, linewidth=1000)
     with open(INPUT_FILE_PATH) as fp:
         for cnt, case in case_generator(fp, CASE_CNT):
-            # print(case)
-            # print(case[0][1])
-            # print('\n')
             ladder = Ladder(case)
             print("#{0} {1}".format(str(cnt).strip('\n'), str(ladder.findWinner())))
