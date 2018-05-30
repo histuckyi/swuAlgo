@@ -4,11 +4,13 @@
     solution for algorithm problem.
     [BackTracking] easy change [쉬운 거스름돈]
     https://www.swexpertacademy.com/main/learn/course/lectureProblemViewer.do
-    You can see the question and download input, output text file from above link.
+    You can see the question
+    and download input, output text file from above link.
 
     * Download input.txt from the link
     * Please, change the value of INPUT_FILE_PATH
 """
+
 import numpy as np
 
 INPUT_FILE_PATH = "./change_input.txt"
