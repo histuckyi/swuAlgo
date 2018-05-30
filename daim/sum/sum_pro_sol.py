@@ -1,13 +1,14 @@
 # !/usr/lib/python3.6 python3
 #  -*-coding:utf-8-*-
 """
-    Python ver. 
+    Python ver.
     solution for algorithm problem.
-    
+
     Two-dimensional array flexibility problem.
     https://www.swexpertacademy.com/main/learn/course/lectureProblemViewer.do
-    You can see the question and downdolad input, output text file from above link.
-    
+    You can see the question
+    and downdolad input, output text file from above link.
+
     * douwnload input.txt from the link
     * Please, change the value of INPUT_fILE_PATH
 """
@@ -50,7 +51,7 @@ class SumArray(object):
         case 1. sum of row          ex) 6(1+2+3), 15(4+5+6) ...
         case 2. sum of column       largerex) 12(1+4+7), 15(2+5+8) ...
         case 3. sum of diagonal(\)  ex) 15(1+5+9)
-        case 4. sum of diagonal(/)  ex) 15(3+5+7) 
+        case 4. sum of diagonal(/)  ex) 15(3+5+7)
 
         ex)
         1 2 3     (0,0)(0,1)(0,2)
@@ -96,7 +97,7 @@ class SumArray(object):
 
 
 def array_generator(fp, case_cnt, size):
-    for i1 in range(0, case_cnt):   
+    for i1 in range(0, case_cnt):
         fp.readline()
         lines = []
         for i2 in range(0, 100):
