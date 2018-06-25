@@ -3,7 +3,7 @@
     Python ver.
     solution for algorithm problem.
 
-    1952. [모의 SW 역량테스트] pool(수영장)
+    1861. [search algorithm] square room
     https://www.swexpertacademy.com/main/learn/course/lectureProblemViewer.do
     You can see the question
     and download input, output text file from above link.
