@@ -12,7 +12,7 @@
 import numpy as np
 import copy
 
-INPUT_FILE_PATH = "/home/daim/workspaces/swuAlgo/daim/sequence/sum_of_partial_sequences_input.txt"
+INPUT_FILE_PATH = "./sum_of_partial_sequences_input.txt"
 CASE_CNT = 10
 
 
